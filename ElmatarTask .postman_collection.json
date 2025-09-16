@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "1198047a-6954-4824-9947-0c3ec6497a99",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48458120",
+		"_collection_link": "https://mahmoudmohameddev8-5355984.postman.co/workspace/mahmoud-mohamed's-Workspace~0dac5335-64ec-45fe-8c03-1c1547620961/collection/48458120-1198047a-6954-4824-9947-0c3ec6497a99?action=share&source=collection_link&creator=48458120"
+	},
+	"item": [
+		{
+			"name": "Elmatar Task",
+			"item": [
+				{
+					"name": "getMyPoints",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getMyTranscions",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"Mahmoud\",\r\n    \"email\":\"Mahmoud2@gmail.com\",\r\n    \"password\":\"11245678\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"Mahmoud2@gmail.com\",\r\n    \"password\":\"11245678\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmTransfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "TEST__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1haG1vdWRAZ21haWwuY29tIiwiaWQiOiI2OGM5OWRkYTM4YjUwM2ZiY2Q5ZGZhMTIiLCJpYXQiOjE3NTgwNDM2NDd9.DayNR8ZHjUbptiiPrfIkKR5vL395Bd59iECYhH82_wo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"transferId\": \"68c99f4538b503fbcd9dfa49\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/transactions/confirmTransfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transactions",
+								"confirmTransfer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "makeTransfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "TEST__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1haG1vdWRAZ21haWwuY29tIiwiaWQiOiI2OGM5OWRkYTM4YjUwM2ZiY2Q5ZGZhMTIiLCJpYXQiOjE3NTgwNDM2NDd9.DayNR8ZHjUbptiiPrfIkKR5vL395Bd59iECYhH82_wo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Mahmoud2@gmail.com\",\r\n     \"amount\":200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/transactions/makeTransfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transactions",
+								"makeTransfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
