@@ -7,7 +7,7 @@ Express · Mongoose · JWT · Joi · In-process scheduler (every 30s)
 
 ## Requirements
 - Node.js 18+
-- MongoDB (Replica Set recommended for full ACID; works without it using safe conditional updates)
+- MongoDB 
 
 ## Environment
 Create `.env` in project root:
@@ -37,7 +37,7 @@ Server boot order in `index.js`: connect DB → start expire scheduler → mount
 - Register/Login returns JWT.
 - Send token via either header:
   - `Authorization: Bearer <JWT>`
-  - `token: TEST__<JWT>`
+  
 
 ## Endpoints
 ### Auth
@@ -64,12 +64,6 @@ Runs every **30s**:
 
 
 
-## Troubleshooting
-- **JWT 401** → ensure headers and valid/active token
-- **Refund delay** → scheduler interval is 30s (adjust `EVERY_MS` in `expire.worker.js`)
-- **No transactions updated** → confirm DB connected; Replica Set recommended
-
----
 
 ### Quick Summary
 - Transfer creates a **pending hold** for 10 minutes, then auto-refunds if unconfirmed.  
